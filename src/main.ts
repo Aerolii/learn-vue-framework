@@ -3,7 +3,9 @@ import './style.css'
 
 // import { effect, reactive } from './utils/effect'
 
-import { reactive as reactiveFn, effect as effect_2 } from './utils/effect_2'
+// import { reactive as reactiveFn, effect as effect_2 } from './utils/effect_2'
+
+import { reactiveFn, effectFn } from './utils/effect_3.js'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -41,7 +43,7 @@ const obj3 = reactiveFn({ text: '2' })
 const btn3 = document.querySelector('#counter2')!
 btn3.addEventListener('click', () => (obj3.text += '3'))
 
-effect_2(() => {
+effectFn(() => {
   console.log('1 :>> ', 1)
   btn2.innerHTML = obj2.text
   btn3.innerHTML = obj3.text
